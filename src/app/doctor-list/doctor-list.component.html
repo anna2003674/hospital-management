@@ -1,0 +1,30 @@
+<h2>Список врачей</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Имя</th>
+            <th>Позиция</th>
+            <th>Время работы</th>
+            <th>Действие</th>
+            <th>Список пациентов</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let doctor of doctors">
+            <td> {{doctor.id}} </td>
+            <td> {{doctor.name}} </td>
+            <td> {{doctor.position}} </td>
+            <td> {{doctor.workingHours}} </td>
+            <td>
+                <button (click)="updateDoctor(doctor.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteDoctor(doctor.id)" class="btn btn-danger"
+                    style="margin-left: 10px">Delete</button>
+                <button (click)="doctorDetails(doctor.id)" class="btn btn-info" style="margin-left: 10px">View</button>
+            </td>
+            <td>
+                <button (click)="viewPatients(doctor.id)" class="btn btn-info" style="margin-left: 10px">+</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

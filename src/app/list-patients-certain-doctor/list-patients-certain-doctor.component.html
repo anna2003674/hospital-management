@@ -1,0 +1,26 @@
+<h2>Список пациентов</h2>
+<div>
+  <a class="btn btn-info" href="" style="margin-right: 10px;">Вернуться к списку врачей</a>
+  <button class="btn btn-warning" (click)="goToAddPatient()">Добавить пациента</button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Заболевание</th>
+      <th>Возраст</th>
+      <th>Действие</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let patient of patients">
+      <td>{{ patient.name }}</td>
+      <td>{{ patient.disease }}</td>
+      <td>{{ patient.age }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deletePatient(patient.id)" style="margin-left: 10px">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
